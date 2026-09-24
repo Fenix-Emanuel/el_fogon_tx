@@ -1,0 +1,60 @@
+/* ==========================================================================
+   Variables: El Fogón TX. Texano con alma argentina.
+   Negro carbón, maderas oscuras, brasa (naranja/rojo) como acento principal,
+   con el celeste y el sol de la bandera como detalles, no como protagonistas.
+   ========================================================================== */
+:root {
+  color-scheme: dark;
+
+  /* Color base */
+  --color-paper: #130D0A;          /* fondo: carbón */
+  --color-surface: #1C140E;        /* secciones */
+  --color-surface-raised: #26190F; /* tarjetas, chat */
+  --color-ink: #F7EFE4;            /* texto principal, blanco cálido */
+  --color-ink-soft: #C7B4A0;       /* texto secundario, tostado */
+  --color-line: #3A2A1D;
+
+  /* Brasa: acento principal */
+  --color-accent: #E1592A;
+  --color-accent-strong: #FF7A45;
+  --color-accent-soft: #2C160D;
+  --color-on-accent: #1A0C05;
+
+  /* Detalles de bandera: solo para acentos puntuales */
+  --color-flag-blue: #5FB6E8;
+  --color-flag-sun: #F6C445;
+
+  --color-error: #FF8A70;
+
+  /* Tipografía */
+  --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
+  --font-body: 'Work Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  --text-sm: 0.875rem;
+  --text-base: 1.0625rem;
+  --text-lg: clamp(1.125rem, 1.05rem + 0.4vw, 1.3125rem);
+  --text-xl: clamp(1.3rem, 1.15rem + 0.7vw, 1.65rem);
+  --text-2xl: clamp(1.75rem, 1.4rem + 1.6vw, 2.6rem);
+  --text-hero: clamp(2.6rem, 1.6rem + 4.6vw, 5rem);
+
+  /* Espaciado */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2.5rem;
+  --space-7: 4rem;
+  --space-section: clamp(3.5rem, 2.5rem + 5vw, 7rem);
+
+  /* Forma */
+  --radius-sm: 6px;
+  --radius-md: 14px;
+  --radius-pill: 999px;
+  --shadow-panel: 0 18px 50px rgba(0, 0, 0, 0.6);
+  --shadow-ember: 0 8px 30px rgba(225, 89, 42, 0.28);
+
+  /* Layout */
+  --header-height: 4.25rem;
+  --gutter: 1.25rem;
+}

@@ -1,0 +1,105 @@
+/* Estructura de la página: contenedores, secciones y grillas */
+.container {
+  width: min(100% - (var(--gutter) * 2), 72rem);
+  margin-inline: auto;
+}
+
+.container--narrow { max-width: 46rem; }
+
+.section { padding-block: var(--space-section); }
+.section--surface { background: var(--color-surface); border-block: 1px solid var(--color-line); }
+
+.section__header {
+  max-width: 40rem;
+  margin-bottom: var(--space-6);
+}
+
+.section__header--center { margin-inline: auto; text-align: center; }
+
+.section__title { font-size: var(--text-2xl); }
+
+.section__intro {
+  margin-top: var(--space-3);
+  color: var(--color-ink-soft);
+}
+
+/* Hero */
+.hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: min(46rem, 100dvh);
+  overflow: hidden;
+}
+
+.hero__inner {
+  position: relative;
+  z-index: 2;
+  padding-block: var(--space-7);
+  text-align: center;
+  margin-inline: auto;
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-3);
+  margin-top: var(--space-5);
+}
+
+.hero__tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-2) var(--space-5);
+  margin-top: var(--space-6);
+}
+
+/* Destacados (platos con ingredientes al scrollear) */
+.dishes__grid {
+  display: grid;
+  gap: var(--space-6);
+}
+
+/* Menú completo */
+.menu__categories {
+  display: grid;
+  gap: var(--space-6);
+}
+
+.menu__list { display: grid; gap: var(--space-4); }
+
+/* Nosotros */
+.about__grid {
+  display: grid;
+  gap: var(--space-6);
+  align-items: center;
+}
+
+/* Reservas */
+.reserve__grid {
+  display: grid;
+  gap: var(--space-6);
+}
+
+/* Ubicación */
+.location__grid {
+  display: grid;
+  gap: var(--space-6);
+}
+
+.site-footer {
+  padding-block: var(--space-6) 5.5rem;
+  background: var(--color-paper);
+  border-top: 1px solid var(--color-line);
+  color: var(--color-ink-soft);
+}
+
+.site-footer__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4) var(--space-6);
+}
