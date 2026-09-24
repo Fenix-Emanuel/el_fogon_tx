@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 260" preserveAspectRatio="xMidYMax meet" role="presentation" aria-hidden="true">
+  <g fill="#0B0705">
+    <!-- patas -->
+    <path d="M120 260 L165 130 L190 130 L150 260 Z"/>
+    <path d="M904 260 L859 130 L834 130 L874 260 Z"/>
+    <path d="M300 260 L320 150 L342 150 L326 260 Z"/>
+    <path d="M724 260 L704 150 L682 150 L698 260 Z"/>
+    <!-- cuerpo del brasero -->
+    <path d="M60 150 C60 110 140 92 512 92 C884 92 964 110 964 150 L940 190 C880 208 620 216 512 216 C404 216 144 208 84 190 Z"/>
+    <!-- rejilla -->
+    <g stroke="#1c130d" stroke-width="6">
+      <line x1="110" y1="118" x2="140" y2="200"/>
+      <line x1="200" y1="105" x2="222" y2="205"/>
+      <line x1="300" y1="98" x2="312" y2="208"/>
+      <line x1="410" y1="94" x2="415" y2="212"/>
+      <line x1="512" y1="92" x2="512" y2="214"/>
+      <line x1="614" y1="94" x2="609" y2="212"/>
+      <line x1="724" y1="98" x2="712" y2="208"/>
+      <line x1="824" y1="105" x2="802" y2="205"/>
+      <line x1="914" y1="118" x2="884" y2="200"/>
+    </g>
+    <path d="M70 148 C70 148 260 168 512 168 C764 168 954 148 954 148" stroke="#1c130d" stroke-width="6" fill="none"/>
+  </g>
+</svg>

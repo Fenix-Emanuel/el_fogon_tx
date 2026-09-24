@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-label="Burger Criolla TX">
+  <defs>
+    <linearGradient id="bunTop3" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E0AC6C"/><stop offset="1" stop-color="#BE8646"/></linearGradient>
+    <linearGradient id="bunBot3" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#C68A48"/><stop offset="1" stop-color="#9C6A31"/></linearGradient>
+    <linearGradient id="patty" x1="0" y1="0" x2="1" y2="0.3"><stop offset="0" stop-color="#5C2E1E"/><stop offset="1" stop-color="#3B1B10"/></linearGradient>
+  </defs>
+  <rect width="400" height="400" fill="#1C140E"/>
+  <ellipse cx="200" cy="336" rx="150" ry="24" fill="#000" opacity="0.35"/>
+  <path d="M72 304 Q77 262 130 258 L270 258 Q323 262 328 304 Q323 324 270 326 L130 326 Q77 324 72 304 Z" fill="url(#bunBot3)"/>
+  <path d="M96 256 q104 -16 208 0 l-4 18 q-100 -14 -200 0 Z" fill="#A23A2C"/>
+  <ellipse cx="200" cy="240" rx="112" ry="20" fill="url(#patty)"/>
+  <path d="M92 232 Q120 246 200 246 Q280 246 308 232 L302 250 Q200 264 98 250 Z" fill="#F0C23E" opacity="0.9"/>
+  <ellipse cx="200" cy="208" rx="70" ry="16" fill="#F4D77B"/>
+  <ellipse cx="200" cy="204" rx="70" ry="10" fill="#F7E39C"/>
+  <circle cx="200" cy="198" r="16" fill="#EFA83A"/>
+  <g fill="#7BAE49" opacity="0.9">
+    <path d="M104 224 q12 -16 26 -6 q-4 16 -24 14 q-6 -4 -2 -8Z"/>
+    <path d="M270 222 q12 -16 26 -6 q-4 16 -24 14 q-6 -4 -2 -8Z"/>
+  </g>
+  <path d="M90 228 Q120 190 200 186 Q280 190 310 228 Q210 212 200 212 Q190 212 90 228 Z" fill="url(#bunTop3)"/>
+  <path d="M90 228 Q120 190 200 186 Q280 190 310 228" fill="none" stroke="#8C5A28" stroke-width="4" stroke-linecap="round" opacity="0.6"/>
+  <g fill="#F1D7A6" opacity="0.9"><circle cx="150" cy="204" r="3"/><circle cx="175" cy="196" r="2.6"/><circle cx="225" cy="198" r="2.8"/><circle cx="252" cy="206" r="3"/></g>
+</svg>

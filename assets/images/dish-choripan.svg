@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-label="Choripán Fogón">
+  <defs>
+    <linearGradient id="bunTop" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D9A15C"/><stop offset="1" stop-color="#B97C3B"/></linearGradient>
+    <linearGradient id="bunBot" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#C68A48"/><stop offset="1" stop-color="#9C6A31"/></linearGradient>
+    <linearGradient id="choriz" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8C3A28"/><stop offset="1" stop-color="#5E2015"/></linearGradient>
+  </defs>
+  <rect width="400" height="400" fill="#1C140E"/>
+  <ellipse cx="200" cy="330" rx="150" ry="26" fill="#000" opacity="0.35"/>
+  <path d="M70 300 Q75 250 130 246 L270 246 Q325 250 330 300 Q325 320 270 322 L130 322 Q75 320 70 300 Z" fill="url(#bunBot)"/>
+  <g transform="rotate(-6 200 250)">
+    <rect x="95" y="205" width="210" height="62" rx="30" fill="url(#choriz)"/>
+    <rect x="95" y="205" width="210" height="62" rx="30" fill="none" stroke="#3C140C" stroke-width="3"/>
+    <path d="M120 214 L280 258 M120 258 L280 214" stroke="#3C140C" stroke-opacity="0.35" stroke-width="4"/>
+  </g>
+  <path d="M92 214 Q120 176 200 172 Q280 176 308 214 Q210 200 200 200 Q190 200 92 214 Z" fill="url(#bunTop)"/>
+  <path d="M92 214 Q120 176 200 172 Q280 176 308 214" fill="none" stroke="#8C5A28" stroke-width="4" stroke-linecap="round" opacity="0.6"/>
+  <g fill="#7C9A3B" opacity="0.92">
+    <path d="M110 232 q10 -14 24 -4 q-4 14 -22 12 q-4 -4 -2 -8Z"/>
+    <path d="M150 240 q8 -12 20 -4 q-2 12 -18 10 q-4 -3 -2 -6Z"/>
+    <path d="M235 238 q8 -12 20 -4 q-2 12 -18 10 q-4 -3 -2 -6Z"/>
+    <path d="M278 230 q10 -14 24 -4 q-4 14 -22 12 q-4 -4 -2 -8Z"/>
+  </g>
+  <g fill="#C24A22" opacity="0.85">
+    <circle cx="140" cy="236" r="3"/><circle cx="168" cy="244" r="2.4"/><circle cx="230" cy="242" r="2.6"/><circle cx="258" cy="234" r="3"/>
+  </g>
+</svg>

@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-label="Sándwich de bife de chorizo">
+  <defs>
+    <linearGradient id="bunTop2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DDA766"/><stop offset="1" stop-color="#BD8544"/></linearGradient>
+    <linearGradient id="bunBot2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#C68A48"/><stop offset="1" stop-color="#9C6A31"/></linearGradient>
+    <linearGradient id="steak" x1="0" y1="0" x2="1" y2="0.4"><stop offset="0" stop-color="#6B3624"/><stop offset="1" stop-color="#472013"/></linearGradient>
+  </defs>
+  <rect width="400" height="400" fill="#1C140E"/>
+  <ellipse cx="200" cy="330" rx="150" ry="26" fill="#000" opacity="0.35"/>
+  <path d="M68 298 Q73 250 130 246 L270 246 Q327 250 332 298 Q327 320 270 322 L130 322 Q73 320 68 298 Z" fill="url(#bunBot2)"/>
+  <path d="M96 244 q104 -18 208 0 l-6 22 q-98 -16 -196 0 Z" fill="#7BAE49"/>
+  <path d="M100 236 Q200 246 300 236 L296 250 Q200 262 104 250 Z" fill="#F2C24A"/>
+  <g>
+    <path d="M92 212 Q120 224 200 224 Q280 224 308 212 L300 236 Q200 250 100 236 Z" fill="url(#steak)"/>
+    <path d="M92 212 Q120 224 200 224 Q280 224 308 212" fill="none" stroke="#2E1108" stroke-width="3" opacity="0.5"/>
+    <g stroke="#2E1108" stroke-width="4" stroke-linecap="round" opacity="0.55">
+      <line x1="120" y1="216" x2="132" y2="228"/>
+      <line x1="150" y1="218" x2="162" y2="230"/>
+      <line x1="180" y1="219" x2="192" y2="231"/>
+      <line x1="210" y1="219" x2="222" y2="231"/>
+      <line x1="240" y1="218" x2="252" y2="230"/>
+      <line x1="270" y1="216" x2="282" y2="228"/>
+    </g>
+  </g>
+  <path d="M108 208 q30 10 92 10 q62 0 92 -10 q4 10 0 16 q-62 14 -92 14 q-30 0 -92 -14 q-4 -6 0 -16Z" fill="#DE9A2E" opacity="0.85"/>
+  <path d="M90 210 Q120 172 200 168 Q280 172 310 210 Q210 196 200 196 Q190 196 90 210 Z" fill="url(#bunTop2)"/>
+  <path d="M90 210 Q120 172 200 168 Q280 172 310 210" fill="none" stroke="#8C5A28" stroke-width="4" stroke-linecap="round" opacity="0.6"/>
+</svg>
