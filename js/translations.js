@@ -18,6 +18,13 @@ export const translations = {
     'nav.toggle': 'Menu',
     'nav.language': 'Language',
 
+    'film.mid.eyebrow': 'Our parrilla',
+    'film.mid.line': 'Real wood. <em>Real fire.</em>',
+    'film.mid.sub': 'Every cut cooks slowly over hardwood embers, the way it is done back home.',
+    'film.end.line': 'Your table <em>is ready.</em>',
+    'film.end.sub': 'Asado, empanadas, chimichurri and a good Malbec. Come hungry.',
+    'film.hint': 'Scroll',
+
     'hero.eyebrow': 'Argentine Grill · Austin, TX',
     'hero.title': 'Fire, family and <em>Argentina</em> in the heart of Texas.',
     'hero.text': 'Real wood-fired asado, choripán and empanadas made the way we grew up eating them, now served right here in Austin.',
@@ -220,6 +227,13 @@ export const translations = {
     'nav.cta': 'Reservar mesa',
     'nav.toggle': 'Menú',
     'nav.language': 'Idioma',
+
+    'film.mid.eyebrow': 'Nuestra parrilla',
+    'film.mid.line': 'Leña de verdad. <em>Fuego de verdad.</em>',
+    'film.mid.sub': 'Cada corte se hace despacio sobre brasas de leña, como se hace en casa.',
+    'film.end.line': 'Tu mesa <em>está lista.</em>',
+    'film.end.sub': 'Asado, empanadas, chimichurri y un buen Malbec. Vení con hambre.',
+    'film.hint': 'Deslizá',
 
     'hero.eyebrow': 'Parrilla Argentina · Austin, TX',
     'hero.title': 'Fuego, familia y <em>Argentina</em> en el corazón de Texas.',

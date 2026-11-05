@@ -1,0 +1,171 @@
+/* =========================================================================
+   Hero cinematográfico: "del fuego a la mesa"
+   Una secuencia de cuadros (video de Higgsfield) que avanza con el scroll.
+
+   Sin JavaScript (o con animaciones reducidas) se ve como un hero normal:
+   foto de las brasas de fondo y el texto principal. El script agrega la
+   clase .is-on y recién ahí el hero se vuelve alto y el video se activa.
+   ========================================================================= */
+
+.hero--film {
+  display: block;
+  min-height: 0;
+  overflow: visible;           /* necesario para que el escenario quede fijo (sticky) */
+  isolation: isolate;
+}
+
+.film__stage {
+  position: relative;
+  min-height: calc(100svh - var(--header-height));
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: var(--color-paper);
+}
+
+/* Foto inicial: se ve mientras cargan los cuadros y cuando no hay animación */
+.film__poster,
+.film__canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.film__poster img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.film__canvas { opacity: 0; transition: opacity 0.6s ease; }
+.film__canvas.is-ready { opacity: 1; }
+
+/* Degradado para que el texto se lea sobre el video */
+.film__scrim {
+  background:
+    linear-gradient(90deg, rgba(19,13,10,0.82) 0%, rgba(19,13,10,0.45) 38%, rgba(19,13,10,0) 64%),
+    linear-gradient(180deg, rgba(19,13,10,0.5) 0%, rgba(19,13,10,0) 22%, rgba(19,13,10,0) 70%, var(--color-paper) 100%);
+}
+
+/* ---------- Textos ---------- */
+.film__beats {
+  position: relative;
+  z-index: 2;
+  padding-block: var(--space-7);
+}
+
+.film__beat { max-width: 36rem; text-align: left; }
+.film__beat .hero__text { margin-inline: 0; }
+.film__beat .hero__actions,
+.film__beat .hero__tags { justify-content: flex-start; }
+
+/* Momentos 2 y 3: solo existen cuando el video está activo */
+.film__beat--mid,
+.film__beat--end { display: none; }
+
+.film__line {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 1.4rem + 4.4vw, 4.8rem);
+  font-weight: 600;
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+  color: var(--color-ink);
+  text-wrap: balance;
+}
+.film__line em { font-style: normal; color: var(--color-accent-strong); }
+
+.film__sub {
+  margin-top: var(--space-4);
+  max-width: 30rem;
+  font-size: var(--text-lg);
+  color: var(--color-ink-soft);
+}
+
+.film__hint { display: none; }
+
+/* ---------- Video activo (lo activa el script) ---------- */
+.hero--film.is-on { height: 460svh; }
+
+.hero--film.is-on .film__stage {
+  position: sticky;
+  top: var(--header-height);
+  height: calc(100svh - var(--header-height));
+  min-height: 0;
+}
+
+.hero--film.is-on .film__beats {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  padding-block: 0;
+}
+
+.hero--film.is-on .film__beat {
+  position: absolute;
+  max-width: min(36rem, 100% - 2 * var(--space-5));
+  opacity: 0;
+  visibility: hidden;
+  transform: translate3d(0, 24px, 0);
+  will-change: opacity, transform;
+}
+.hero--film.is-on .film__beat--mid,
+.hero--film.is-on .film__beat--end { display: block; }
+
+/* Indicador de "seguí bajando" */
+.hero--film.is-on .film__hint {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  position: absolute;
+  left: 50%;
+  bottom: var(--space-5);
+  z-index: 3;
+  transform: translateX(-50%);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-ink-soft);
+  transition: opacity 0.4s ease;
+}
+.film__hint i {
+  width: 1px;
+  height: 2.5rem;
+  background: linear-gradient(var(--color-accent-strong), transparent);
+  animation: film-hint 1.8s ease-in-out infinite;
+  transform-origin: top;
+}
+.hero--film.is-scrolled .film__hint { opacity: 0; }
+
+@keyframes film-hint {
+  0% { transform: scaleY(0); opacity: 1; }
+  70% { transform: scaleY(1); opacity: 1; }
+  100% { transform: scaleY(1); opacity: 0; }
+}
+
+/* ---------- Celular: texto centrado abajo, sobre un degradado vertical ---------- */
+@media (max-width: 700px) {
+  .film__scrim {
+    background: linear-gradient(180deg, rgba(19,13,10,0.35) 0%, rgba(19,13,10,0.1) 30%, rgba(19,13,10,0.78) 66%, var(--color-paper) 100%);
+  }
+  .film__beat { text-align: center; margin-inline: auto; }
+  .film__beat .hero__text,
+  .film__sub { margin-inline: auto; }
+  .film__beat .hero__actions,
+  .film__beat .hero__tags { justify-content: center; }
+
+  /* deja libre el botón flotante de reservas de abajo */
+  .hero--film.is-on .film__beats { align-items: flex-end; padding-bottom: calc(7.5rem + env(safe-area-inset-bottom, 0px)); }
+  .hero--film.is-on .film__hint { display: none; }
+  .hero--film.is-on .film__beat { left: 0; right: 0; max-width: none; }
+  .hero--film.is-on .film__beat--intro .hero__tags { display: none; }
+  .film__line { font-size: clamp(2.2rem, 1.2rem + 6vw, 3rem); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .film__hint i { animation: none; }
+}

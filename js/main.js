@@ -5,6 +5,7 @@ import { initNavbar } from './navbar.js';
 import { initForm } from './form.js';
 import { initChat } from './chat.js';
 import { initScrollReveal } from './scroll-reveal.js';
+import { initHeroFilm } from './hero-film.js';
 import { whatsappUrl } from './whatsapp.js';
 
 function initWhatsappLinks() {
@@ -36,3 +37,4 @@ initNavbar();
 initForm();
 initChat();
 initScrollReveal();
+initHeroFilm();
