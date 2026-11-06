@@ -26,6 +26,7 @@
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/chat.css">
   <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/dish-film.css">
 </head>
 
 <body id="top">
@@ -124,24 +125,29 @@
 
         <div class="dishes__grid">
 
-          <article class="dish">
-            <div class="dish__media">
-              <img src="assets/images/dish-choripan.svg" alt="Choripán Fogón" loading="lazy" width="400" height="400">
-              <span class="dish__pin" style="left:33%; top:58%; --i:0">1</span>
-              <span class="dish__pin" style="left:50%; top:44%; --i:1">2</span>
-              <span class="dish__pin" style="left:65%; top:60%; --i:2">3</span>
-              <span class="dish__pin" style="left:73%; top:52%; --i:3">4</span>
-            </div>
-            <div class="dish__body">
-              <h3 class="dish__name" data-i18n="dish.choripan.name">Choripán Fogón</h3>
-              <p class="dish__desc" data-i18n="dish.choripan.desc">Our signature chorizo, split and grilled over wood coals, on warm campo bread.</p>
-              <span class="dish__price">$11</span>
-              <ul class="dish__ingredients">
-                <li class="dish__ingredient" style="--i:0"><span class="dish__ingredient-index">1</span><span><span class="dish__ingredient-name" data-i18n="dish.choripan.i1">Campo bread</span> — <span class="dish__ingredient-note" data-i18n="dish.choripan.i1d">Baked fresh every morning.</span></span></li>
-                <li class="dish__ingredient" style="--i:1"><span class="dish__ingredient-index">2</span><span><span class="dish__ingredient-name" data-i18n="dish.choripan.i2">Criollo chorizo</span> — <span class="dish__ingredient-note" data-i18n="dish.choripan.i2d">Grilled slow over real wood coals.</span></span></li>
-                <li class="dish__ingredient" style="--i:2"><span class="dish__ingredient-index">3</span><span><span class="dish__ingredient-name" data-i18n="dish.choripan.i3">Homemade chimichurri</span> — <span class="dish__ingredient-note" data-i18n="dish.choripan.i3d">Parsley, garlic, oregano, olive oil.</span></span></li>
-                <li class="dish__ingredient" style="--i:3"><span class="dish__ingredient-index">4</span><span><span class="dish__ingredient-name" data-i18n="dish.choripan.i4">Roasted peppers</span> — <span class="dish__ingredient-note" data-i18n="dish.choripan.i4d">Charred until sweet and smoky.</span></span></li>
-              </ul>
+          <article class="dish dish--film" data-dish-film data-frames="assets/dishes/choripan/" data-count="101" data-done="0.81">
+            <!-- Escenario fijo: el choripán se arma solo mientras se hace scroll -->
+            <div class="dish__stage">
+              <div class="dish__media">
+                <div class="dish__glow" aria-hidden="true"></div>
+                <img class="dish__poster" src="assets/dishes/choripan-poster.webp" alt="Choripán Fogón" loading="lazy" width="720" height="720">
+                <canvas class="dish__canvas" aria-hidden="true"></canvas>
+                <span class="dish__spark" style="--x:18%; --d:0s" aria-hidden="true"></span>
+                <span class="dish__spark" style="--x:34%; --d:-1.2s" aria-hidden="true"></span>
+                <span class="dish__spark" style="--x:62%; --d:-0.6s" aria-hidden="true"></span>
+                <span class="dish__spark" style="--x:80%; --d:-1.8s" aria-hidden="true"></span>
+              </div>
+              <div class="dish__body">
+                <h3 class="dish__name" data-i18n="dish.choripan.name">Choripán Fogón</h3>
+                <p class="dish__desc" data-i18n="dish.choripan.desc">Our signature chorizo, split and grilled over wood coals, on warm campo bread.</p>
+                <span class="dish__price">$11</span>
+                <ul class="dish__ingredients">
+                  <li class="dish__ingredient" data-land="0" style="--i:0"><span class="dish__ingredient-index">1</span><span><span class="dish__ingredient-name" data-i18n="dish.choripan.i1">Campo bread</span><span class="dish__sep" aria-hidden="true"> — </span><span class="dish__ingredient-note" data-i18n="dish.choripan.i1d">Baked fresh every morning.</span></span></li>
+                  <li class="dish__ingredient" data-land="0.14" style="--i:1"><span class="dish__ingredient-index">2</span><span><span class="dish__ingredient-name" data-i18n="dish.choripan.i2">Criollo chorizo</span><span class="dish__sep" aria-hidden="true"> — </span><span class="dish__ingredient-note" data-i18n="dish.choripan.i2d">Grilled slow over real wood coals.</span></span></li>
+                  <li class="dish__ingredient" data-land="0.24" style="--i:2"><span class="dish__ingredient-index">3</span><span><span class="dish__ingredient-name" data-i18n="dish.choripan.i4">Roasted peppers</span><span class="dish__sep" aria-hidden="true"> — </span><span class="dish__ingredient-note" data-i18n="dish.choripan.i4d">Charred until sweet and smoky.</span></span></li>
+                  <li class="dish__ingredient" data-land="0.48" style="--i:3"><span class="dish__ingredient-index">4</span><span><span class="dish__ingredient-name" data-i18n="dish.choripan.i3">Homemade chimichurri</span><span class="dish__sep" aria-hidden="true"> — </span><span class="dish__ingredient-note" data-i18n="dish.choripan.i3d">Parsley, garlic, oregano, olive oil.</span></span></li>
+                </ul>
+              </div>
             </div>
           </article>
 

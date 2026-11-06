@@ -1,0 +1,136 @@
+/* =========================================================================
+   Platos que se arman solos al hacer scroll
+   Cada plato con video (secuencia de cuadros) queda fijo en pantalla
+   mientras los ingredientes caen en su lugar. La lista de ingredientes se
+   enciende a medida que cada uno aterriza.
+
+   Sin JavaScript (o con animaciones reducidas) se ve como una tarjeta
+   normal: la foto del plato armado y todos los ingredientes visibles.
+   ========================================================================= */
+
+.dish--film { display: block; }   /* el escenario interno hace la grilla */
+
+.dish--film .dish__stage {
+  display: grid;
+  gap: var(--space-5);
+  align-items: center;
+}
+
+.dish--film .dish__media {
+  background: #0d0806;
+  border-color: rgba(255, 122, 69, 0.18);
+  perspective: 1000px;
+  isolation: isolate;
+  overflow: visible;           /* las chispas salen un poco del marco */
+}
+
+/* La foto, el canvas y el brillo comparten el mismo marco redondeado */
+.dish--film .dish__poster,
+.dish--film .dish__canvas,
+.dish__glow {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+}
+.dish--film .dish__poster { object-fit: cover; }
+.dish--film .dish__canvas { opacity: 0; transition: opacity 0.5s ease; }
+.dish--film .dish__canvas.is-ready { opacity: 1; }
+
+/* Resplandor de brasa detrás del plato: crece a medida que se arma */
+.dish__glow {
+  inset: -8%;
+  z-index: -1;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(255, 122, 69, 0.45), rgba(225, 89, 42, 0.12) 55%, transparent 75%);
+  filter: blur(18px);
+  opacity: var(--heat, 0.35);
+  transition: opacity 0.4s ease;
+}
+
+/* Chispas que suben alrededor del plato */
+.dish__spark {
+  position: absolute;
+  left: var(--x);
+  bottom: 12%;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--color-accent-strong);
+  box-shadow: 0 0 8px 2px rgba(255, 122, 69, 0.7);
+  opacity: 0;
+  pointer-events: none;
+  animation: dish-spark 2.6s ease-out infinite;
+  animation-delay: var(--d);
+}
+@keyframes dish-spark {
+  0% { transform: translate3d(0, 0, 0) scale(1); opacity: 0; }
+  12% { opacity: 0.9; }
+  100% { transform: translate3d(14px, -220%, 0) scale(0.3); opacity: 0; }
+}
+
+/* ---------- Con video activo (lo activa el script) ---------- */
+.dish--film.is-on { height: 240svh; }
+
+.dish--film.is-on .dish__stage {
+  position: sticky;
+  top: calc(var(--header-height) + var(--space-4));
+  height: calc(100svh - var(--header-height) - var(--space-4) * 2);
+  align-content: center;
+}
+
+/* El marco se inclina en 3D siguiendo el mouse (o el scroll en el celular) */
+.dish--film.is-on .dish__media {
+  transform: rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+  transform-style: preserve-3d;
+  box-shadow:
+    calc(var(--ry, 0deg) / 1deg * -1.5px) calc(18px + var(--rx, 0deg) / 1deg * 1.5px) 50px rgba(0, 0, 0, 0.55),
+    0 0 0 1px rgba(255, 122, 69, 0.12);
+  will-change: transform;
+}
+
+/* Nombre del plato más grande: es el protagonista de la escena */
+.dish--film .dish__name { font-size: clamp(1.8rem, 1.2rem + 2.2vw, 3rem); line-height: 1.05; }
+
+/* Ingredientes: apagados hasta que aterrizan */
+.dish--film.is-on .dish__ingredient {
+  opacity: 0.28;
+  transform: none;
+  transition: opacity 0.35s ease, color 0.35s ease;
+  transition-delay: 0s;
+}
+.dish--film.is-on .dish__ingredient-index { transition: background 0.35s ease, color 0.35s ease, box-shadow 0.35s ease; }
+
+.dish--film.is-on .dish__ingredient.is-landed { opacity: 1; }
+.dish--film.is-on .dish__ingredient.is-landed .dish__ingredient-index {
+  background: var(--color-accent);
+  color: var(--color-on-accent);
+  box-shadow: 0 0 0 4px rgba(225, 89, 42, 0.22);
+}
+
+/* Cuando el plato termina de armarse, el precio se enciende */
+.dish--film.is-on .dish__price { transition: color 0.4s ease, text-shadow 0.4s ease; }
+.dish--film.is-done .dish__price {
+  color: var(--color-flag-sun);
+  text-shadow: 0 0 18px rgba(246, 196, 69, 0.45);
+}
+
+/* Celular: plato arriba, texto abajo, todo dentro de la pantalla */
+@media (max-width: 47.99em) {
+  .dish--film.is-on .dish__stage { gap: var(--space-4); align-content: start; padding-top: var(--space-2); }
+  .dish--film.is-on .dish__media { width: min(100%, 46svh); margin-inline: auto; }
+  .dish--film.is-on .dish__desc { display: none; }
+  .dish--film.is-on .dish__ingredients { margin-top: var(--space-3); padding-top: var(--space-3); gap: var(--space-1); }
+  .dish--film.is-on .dish__ingredient-note,
+  .dish--film.is-on .dish__sep { display: none; }
+}
+
+@media (min-width: 48em) {
+  .dish--film .dish__stage { grid-template-columns: 1fr 1fr; gap: var(--space-6); }
+  .dish--film:nth-child(even) .dish__media { order: 2; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dish__spark { animation: none; display: none; }
+}

@@ -6,6 +6,7 @@ import { initForm } from './form.js';
 import { initChat } from './chat.js';
 import { initScrollReveal } from './scroll-reveal.js';
 import { initHeroFilm } from './hero-film.js';
+import { initDishFilms } from './dish-film.js';
 import { whatsappUrl } from './whatsapp.js';
 
 function initWhatsappLinks() {
@@ -38,3 +39,4 @@ initForm();
 initChat();
 initScrollReveal();
 initHeroFilm();
+initDishFilms();
