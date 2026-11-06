@@ -71,7 +71,7 @@
 }
 
 /* ---------- Con video activo (lo activa el script) ---------- */
-.dish--film.is-on { height: 240svh; }
+.dish--film.is-on { height: 210svh; }
 
 .dish--film.is-on .dish__stage {
   position: sticky;
@@ -95,7 +95,7 @@
 
 /* Ingredientes: apagados hasta que aterrizan */
 .dish--film.is-on .dish__ingredient {
-  opacity: 0.28;
+  opacity: 0.4;
   transform: none;
   transition: opacity 0.35s ease, color 0.35s ease;
   transition-delay: 0s;
