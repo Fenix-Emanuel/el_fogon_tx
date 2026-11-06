@@ -7,6 +7,7 @@ import { initChat } from './chat.js';
 import { initScrollReveal } from './scroll-reveal.js';
 import { initHeroFilm } from './hero-film.js';
 import { initDishFilms } from './dish-film.js';
+import { initMenuMotion } from './menu-motion.js';
 import { whatsappUrl } from './whatsapp.js';
 
 function initWhatsappLinks() {
@@ -40,3 +41,4 @@ initChat();
 initScrollReveal();
 initHeroFilm();
 initDishFilms();
+initMenuMotion();

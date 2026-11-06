@@ -27,8 +27,8 @@
   --color-error: #FF8A70;
 
   /* Tipografía */
-  --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
-  --font-body: 'Work Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-display: 'Gloock', 'Bodoni 72', Didot, Georgia, serif;
+  --font-body: 'Hanken Grotesk', system-ui, -apple-system, 'Segoe UI', sans-serif;
 
   --text-sm: 0.875rem;
   --text-base: 1.0625rem;
