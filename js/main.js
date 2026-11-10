@@ -32,6 +32,21 @@ function initMinDate() {
   field.min = new Date().toISOString().split('T')[0];
 }
 
+// El botón flotante "Reserve a table" se esconde mientras se ven los botones del hero (evita dos iguales a la vez)
+function initFloatingCta() {
+  const toggle = document.querySelector('[data-chat-toggle]');
+  const heroCtas = document.querySelectorAll('.hero [data-chat-open]');
+  if (!toggle || !heroCtas.length || !('IntersectionObserver' in window)) return;
+  const visible = new Set();
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e) => (e.isIntersecting ? visible.add(e.target) : visible.delete(e.target)));
+    const hide = visible.size > 0 && toggle.getAttribute('aria-expanded') !== 'true';
+    toggle.classList.toggle('is-tucked', hide);
+    toggle.toggleAttribute('inert', hide);
+  });
+  heroCtas.forEach((b) => io.observe(b));
+}
+
 initI18n();
 initWhatsappLinks();
 initMinDate();
@@ -42,3 +57,4 @@ initScrollReveal();
 initHeroFilm();
 initDishFilms();
 initMenuMotion();
+initFloatingCta();

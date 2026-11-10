@@ -23,8 +23,10 @@
   color: var(--color-on-accent);
   font-weight: 600;
   box-shadow: var(--shadow-ember);
-  transition: background-color 0.15s;
+  transition: background-color 0.15s, opacity 0.3s, transform 0.3s;
 }
+
+.chat__toggle.is-tucked { opacity: 0; transform: translateY(12px); pointer-events: none; }
 
 .chat__toggle:hover { background: var(--color-accent-strong); }
 
@@ -133,3 +135,5 @@
   font-size: var(--text-sm);
   text-align: center;
 }
+
+@media (prefers-reduced-motion: reduce) { .chat__toggle.is-tucked { transform: none; } }
